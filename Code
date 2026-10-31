@@ -1,0 +1,56 @@
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int choice, hours;
+    float fee = 0;
+
+    cout << "===== PARKING FEE CALCULATOR =====" << endl;
+
+    cout << "\nSelect Vehicle Type:" << endl;
+    cout << "1. Two Wheeler" << endl;
+    cout << "2. Four Wheeler" << endl;
+
+    cout << "\nEnter your choice: ";
+    cin >> choice;
+
+    cout << "Enter parking hours: ";
+    cin >> hours;
+
+    if (hours <= 0)
+    {
+        cout << "Invalid parking hours!";
+    }
+    else
+    {
+        if (choice == 1)
+        {
+            fee = hours * 10;
+        }
+        else if (choice == 2)
+        {
+            fee = hours * 20;
+        }
+        else
+        {
+            cout << "Invalid vehicle choice!";
+            return 0;
+        }
+
+        cout << "\n===== PARKING RECEIPT =====" << endl;
+
+        if (choice == 1)
+            cout << "Vehicle: Two Wheeler" << endl;
+        else
+            cout << "Vehicle: Four Wheeler" << endl;
+
+        cout << "Parking Hours: " << hours << endl;
+        cout << "Total Parking Fee: Rs. " << fee << endl;
+
+        cout << "Thank You! Visit Again." << endl;
+    }
+
+    return 0;
+}
